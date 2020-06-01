@@ -34,7 +34,7 @@ public class AppExpressionParser {
         String msg2 = (String) spelExpressionParser.parseExpression("#greeting.substring(6)").getValue(standardEvaluationContext2);
         System.out.println(msg2);
 
-        User user = new User();
+        User user = new User("US", "En");
         StandardEvaluationContext userContext = new StandardEvaluationContext(user);
         spelExpressionParser.parseExpression("country").setValue(userContext, "India");
         System.out.println(user.getCountry());
@@ -42,7 +42,7 @@ public class AppExpressionParser {
         spelExpressionParser.parseExpression("language").setValue(userContext, "hindi");
         System.out.println(user.getLanguage());
 
-        spelExpressionParser.parseExpression("timeZone").setValue(userContext, "India/Ashia");
+        spelExpressionParser.parseExpression("timeZone").setValue(userContext, "Asia/Kolkata");
         System.out.println(user.getTimeZone());
 
 
