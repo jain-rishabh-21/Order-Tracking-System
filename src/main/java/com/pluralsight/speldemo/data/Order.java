@@ -36,6 +36,9 @@ public class Order {
     @Value("#{(shipping.locationsByCountry.?[shipping < 10].size())}")
     private Integer cheapShippingLocations;
 
+    @Value("#{user.name} your order total is #{order.formattedAmount}")
+    private String orderSummary;
+
 
     public double getAmount() {
         return amount;
@@ -107,5 +110,13 @@ public class Order {
 
     public void setCheapShippingLocations(Integer cheapShippingLocations) {
         this.cheapShippingLocations = cheapShippingLocations;
+    }
+
+    public String getOrderSummary() {
+        return orderSummary;
+    }
+
+    public void setOrderSummary(String orderSummary) {
+        this.orderSummary = orderSummary;
     }
 }
